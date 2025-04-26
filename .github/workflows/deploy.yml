@@ -22,13 +22,13 @@ jobs:
 
     - name: Login to Amazon ECR
       run: |
-        aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 1234567890.dkr.ecr.us-east-1.amazonaws.com
+        aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 010438466808.dkr.ecr.us-east-1.amazonaws.com
 
     - name: Build, Tag, and Push Docker image
       run: |
         docker build -t python-ecs-app:${{ github.run_number }} .
-        docker tag python-ecs-app:${{ github.run_number }} 1234567890.dkr.ecr.us-east-1.amazonaws.com/python-ecs-app:${{ github.run_number }}
-        docker push 1234567890.dkr.ecr.us-east-1.amazonaws.com/python-ecs-app:${{ github.run_number }}
+        docker tag python-ecs-app:${{ github.run_number }} 010438466808.dkr.ecr.us-east-1.amazonaws.com/python-ecs-app:${{ github.run_number }}
+        docker push 010438466808.dkr.ecr.us-east-1.amazonaws.com/python-ecs-app:${{ github.run_number }}
 
     - name: Update ECS Service
       run: |
