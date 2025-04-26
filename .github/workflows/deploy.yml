@@ -32,4 +32,4 @@ jobs:
 
     - name: Update ECS Service
       run: |
-        aws ecs update-service --cluster my-ecscluster --service python-ecs-service --force-new-deployment
+        aws ecs update-service --cluster my-ecscluster --service  python-ecs-app-service-7gzqaz67 --force-new-deployment
