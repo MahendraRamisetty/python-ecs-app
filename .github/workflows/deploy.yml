@@ -26,9 +26,9 @@ jobs:
 
     - name: Build, Tag, and Push Docker image
       run: |
-        docker build -t python-ecs-app:latest
-        docker tag python-ecs-app:$latest 010438466808.dkr.ecr.us-east-1.amazonaws.com/python-ecs-app:$latest
-        docker push 010438466808.dkr.ecr.us-east-1.amazonaws.com/python-ecs-app:$latest
+        docker build -t python-ecs-app:latest .
+        docker tag python-ecs-app:latest 010438466808.dkr.ecr.us-east-1.amazonaws.com/python-ecs-app:latest
+        docker push 010438466808.dkr.ecr.us-east-1.amazonaws.com/python-ecs-app:latest
 
     - name: Update ECS Service
       run: |
